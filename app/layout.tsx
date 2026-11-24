@@ -5,8 +5,11 @@ import './globals.css';
 const serif = Cormorant_Garamond({ variable: '--font-serif', subsets: ['latin'], weight: ['400', '500', '600'], style: ['normal', 'italic'] });
 const sans = Montserrat({ variable: '--font-sans-custom', subsets: ['latin'], weight: ['400', '500', '600'] });
 
+const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+const siteUrl = productionHost ? `https://${productionHost}` : 'http://localhost:3000';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fabiola-jaime-2027.fizzycreek6.chatgpt.site'),
+  metadataBase: new URL(siteUrl),
   title: 'Fabiola & Jaime | 13 de marzo de 2027',
   description: 'Acompáñanos a celebrar nuestro matrimonio el 13 de marzo de 2027.',
   openGraph: {
